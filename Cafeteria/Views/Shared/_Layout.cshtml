@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>@ViewBag.Title - Minha Cafeteria</title>
+
+	<script src="~/Scripts/jquery-3.3.1.min.js"></script>
+	<script src="~/Content/js/bootstrap.min.js"></script>
+	<link href="~/Content/css/bootstrap.min.css" rel="stylesheet" />
+	<script src="~/Scripts/popper.min.js"></script>
+	<script src="~/Scripts/ScriptTela/TelaFluxo_Item.js"></script>  
+	
+	<style>
+		#teste {
+			position: absolute;
+			margin-left: 60px;
+		}
+	</style>
+</head>
+<body>
+	<div class="navbar  navbar-dark bg-dark  ">
+		<!-- img icone -->
+		<a class="navbar-brand" disable href="#">
+			<img src="~/Img/coffee.png" width="40" height="40">
+		</a>
+		<div id="teste">
+			<ul class="nav justify-content-between">
+				<li class="nav-item">
+					<a class="nav-link " href="~/Home/Index">Inicio </a>
+				</li>
+			</ul>
+		</div>
+		<!--VERIFICA SE ESTA LOGADO, PARA MUDAR O LAYOUT-->
+		@if (Convert.ToInt16(Session["Menu"]) == 0)
+		{
+
+			<div style="text-align:center">
+				<font color="white"> Bom Café </font>
+			</div>
+			<ul class="nav">
+				<li class="dropdown" id="menuLogin">
+					<a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
+					<div class="dropdown-menu" style="padding:15px; right: 0; left: auto;">
+						<form id="formLogin" action="~/Login/Logar">
+							<input type="text" name="Login" placeholder="Login" />
+							<input type="password" name="Senha" placeholder="Senha" />
+							<button type="submit" id="btnLogin" class="btn btn-primary">Entrar</button>
+						</form>
+					</div>
+				</li>
+			</ul>
+		}
+		else
+		{
+			<div style="text-align:center">
+				<font color="white"> Bom Café </font>
+			</div>
+
+			<ul class="nav">
+				<li>
+					<a href="~/home/Sair">Sair</a>
+				</li>
+			</ul>
+		}
+	</div>
+	<div class="container body-content">
+		@RenderBody()
+		<hr />
+	</div>
+</body>
+</html>

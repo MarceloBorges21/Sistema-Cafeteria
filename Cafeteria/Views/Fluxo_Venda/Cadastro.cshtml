@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Cadastro";
+}
+<script src="~/Scripts/jquery.js"></script>
+
+<script src="~/Scripts/ScriptTela/TelaFluxo_Item.js"></script>
+
+<h2>Cadastro Fluxo_Venda</h2>
+
+<div class="col-lg-6">
+    <form class="form-horizontal" action="~/Fluxo_Venda/Salvar">
+        <input type="hidden" class="form-control" id="Id" name="Id" value="@ViewBag.Id" />
+        <div class="box-body">
+
+
+
+            <div class="form-control">
+                <label class="col-sm-2 control-label">Id_FluxoVenda</label>
+                <div class="col-sm-6">
+                    <select id="fluxo_venda" class="form-control"></select>
+                </div>
+            </div>
+            <br /><br /><br />
+
+            <div class="form-group">
+
+                <div class="col-lg-6">
+                    <button type="submit" id="ValidaCadastro" class="btn btn-success" data-toggle="modal"> Salvar</button>
+                    <button id="Editar" name="Editar" class="btn btn-primary">Editar</button>
+                    <button id="Excluir" name="Excluir" class="btn btn-danger">Excluir</button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+

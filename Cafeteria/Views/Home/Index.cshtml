@@ -1,0 +1,136 @@
+﻿@{
+	ViewBag.Title = "Home Page";
+}
+
+<!--VERIFICA SE ESTA LOGADO, PARA MUDAR A PAGINA-->
+@if (Convert.ToInt16(Session["Menu"]) == 0)
+{
+	<style>
+		body {
+			background-color: #2E2E2E;
+		}
+	</style>
+	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0" class="active">
+			</li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1">
+			</li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2">
+
+			</li>
+		</ol>
+		<div style="background-color:dimgray" class="carousel-inner">
+			<div class="carousel-item active">
+				<center><img src="~/Img/bem.jpg" width="800" height="400" alt="Primeiro slide"></center>
+			</div>
+			<div class="carousel-item">
+				<center><img src="~/Img/montar-uma-cafeteria.jpg" width="800" height="400" alt="Segundo slide"></center>
+			</div>
+			<div class="carousel-item">
+				<center><img src="~/Img/xicara-de-cafe.jpg" width="800" height="400" alt="Terceiro slide"></center>
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+			<span class="carousel-control-prev-icon" aria-hidden="true">
+			</span>
+			<span class="sr-only"> Previous </span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+			<span class="carousel-control-next-icon" aria-hidden="true"></span>
+			<span class="sr-only"> Next </span>
+		</a>
+	</div>
+	<br />
+	<br />
+
+	@*Texto baixo slide*@
+	<p class="text-monospace" style="color:indianred; text-align:center">
+		VOCÊ VAI TER MOTIVOS DE SOBRA PARA
+		DEGUSTAR UM DOS NOSSOS CAFÉS.
+	</p>
+	<p class="text-monospace" style="color:azure; text-align:left">
+		Com um ambiente descontraído e excelente atendimento,
+		o<strong> Bom Café Cafeteria</strong> inaugura um novo conceito de café gourmet em Blumenau.
+		São cafés especiais e tradicionais, acompanhados de docinhos, bolos, tortas, sobremesas, salgados, sanduíches
+		e pães de queijo que vão te deixar com água na boca.
+		Dê uma pausa em sua rotina e venha nos fazer uma visita.
+	</p>
+	<br />
+	<br />
+	<p class="text-monospace" style="color:antiquewhite">
+		Aceitamos encomendas de tortas, bolos e salgados. Consulte a disponibilidade
+		de entrega nas imediações da cafeteria (500 metros).
+	</p>
+}
+else
+{
+	//CAI AQUI SE ESTIVER LOGADO
+	<style>
+		body {
+			background-color: darkgrey;
+		}
+	</style>
+
+	<h3 class="text-center"><strong>Seja Bem Vindo(a) @Session["login"]</strong></h3>
+
+	<div class="text-center" style="margin-top:50px;">
+		<a class="badge badge-dark" href="~/Fluxo_Venda/Index">
+			<h4><font color="white">Fazer uma nova Venda</font></h4>
+		</a>
+	</div>
+
+	<!--Div De Funcionario-->
+	<div class="row" style="margin-top:70px;">
+		<div class="col-sm-6 text-center">
+			<div class="card" style="background-color:dimgrey">
+				<div class="card-body">
+					<h2><u><strong>Funcionario</strong></u></h2>
+					<br />
+					<div>
+						<a class="badge badge-info" href="~/Funcionario/Cadastro">
+							<h4><font color="white">Cadastrar Funcionario</font></h4>
+						</a>
+					</div><br />
+					<div>
+						<a class="badge badge-info" href="~/Funcionario/Index">
+							<h4><font color="white">Listar Funcionario</font></h4>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--Fim da div funcionario-->
+		<!--div Produto-->
+		<div class="col-sm-6 text-center">
+			<div class="card" style="background-color:dimgrey">
+				<div class="card-body">
+					<h2><u><strong>Produto</strong></u></h2>
+					<br />
+					<div>
+						<a class="badge badge-info" href="~/Produto/Cadastro">
+							<h4><font color="white">Cadastrar Produto</font></h4>
+						</a>
+					</div><br />
+					<div>
+						<a class="badge badge-info" href="~/Produto/Index">
+							<h4><font color="white">Listar Produto</font></h4>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--Fim da div Produto-->
+
+	<br />
+	<div class="text-center">
+		<a class="badge badge-dark" href="~/Fluxo_Item/Index">
+			<h4><font color="white">Listar Fluxo Item</font></h4>
+		</a>
+	</div>
+}
+
+
+
+

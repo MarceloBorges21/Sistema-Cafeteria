@@ -1,0 +1,29 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Produtos</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Descrição</th>
+        <th>Valor</th>
+        <th>Data</th>
+        <th>Editar</th>
+        <th>Excluir</th>
+
+    </tr>
+	@foreach (var produtos in ViewBag.ListaProduto)
+	{
+		<tr>
+			<td>@produtos.Id</td>
+			<td>@produtos.Descricao</td>
+			<td>@produtos.Valor</td>
+            <td>@produtos.Data</td>
+            <td><a href="~/Produto/Cadastro/@produtos.Id">Editar</a></td>
+            <td><a href="~/Produto/Excluir/@produtos.Id">Excluir</a></td>
+		</tr>
+	}
+</table>

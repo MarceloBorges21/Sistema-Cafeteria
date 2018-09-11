@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista Fluxo_Item</h2>
+
+<table class="table table-striped">
+    <tr>
+        <th>Id</th>
+        <th>Id_Fluxo Venda</th>
+        <th>Id_Produto</th>
+        <th>Quantidade</th>
+        <th>Excluir</th>
+
+    </tr>
+    @foreach (var Fluxo_Item in ViewBag.ListaFluxo_Item)
+    {
+    <tr>
+        <td>@Fluxo_Item.Id</td>
+        <td>@Fluxo_Item.Id_FluxoVenda</td>
+        <td>@Fluxo_Item.Id_Produto</td>
+        <td>@Fluxo_Item.Quantidade</td>
+        <td><a href="~/Fluxo_Item/Excluir/@Fluxo_Item.Id">Excluir</a></td>
+    </tr>
+    }
+</table>

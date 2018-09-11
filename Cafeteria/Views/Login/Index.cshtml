@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+}
+<link href="~/Content/LoginCSS.css" rel="stylesheet" />
+<script src="~/Content/LoginJS.js"></script>
+
+<h2>Login</h2>
+
+<div class="login-page">
+    <div class="form">      
+
+        <div <font color="Red"><b>@Session["Erro"]</b></font></div>
+
+        <form class="login-form" action="~/Login/Logar">
+            <input type="text" name="Login" placeholder="Login" />
+            <input type="password" name="Senha" placeholder="Senha" />
+            <button type="submit" class="btn btn-primary>Login</button>
+        </form>
+    </div>
+</div>
+
