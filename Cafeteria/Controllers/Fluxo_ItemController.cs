@@ -22,8 +22,14 @@ namespace Cafeteria.Controllers
 
 					return View();
 				}
-								
-                [HttpPost]
+
+				public ActionResult Excluir(int Id)
+				{
+					DAO.Excluir(Id);
+					return RedirectToAction("Index", "Fluxo_Item");
+				}
+
+				[HttpPost]
                 public JsonResult SalvarAjax(Fluxo_Item u)
                 {
                     DAO.SalvarPeloObjeto(u);

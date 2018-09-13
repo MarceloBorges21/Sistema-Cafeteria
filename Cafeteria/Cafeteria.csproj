@@ -280,7 +280,6 @@
     <Content Include="Views\Produto\Cadastro.cshtml" />
     <Content Include="Views\Funcionario\Index.cshtml" />
     <Content Include="Views\Funcionario\Cadastro.cshtml" />
-    <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Fluxo_Item\Index.cshtml" />
     <Content Include="Views\Fluxo_Item\Cadastro.cshtml" />
     <Content Include="Views\Fluxo_Venda\Cadastro.cshtml" />

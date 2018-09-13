@@ -1,13 +1,9 @@
-﻿$(document).ready(function () {
+﻿$(document).ready(function ()
+{
+	var $JQuery = jQuery.noConflict();//n da conflito no jquery
 
-    var $JQuery = jQuery.noConflict();//n da conflito no jquery
     CarregaProduto();
-
-    //$("#FormaPagamento").click(function ()//se ocorrer tudo bem chama modal
-    //{
-      
-    //});
-
+	
     $("#SalvarFechamento").click(function ()//se ocorrer tudo bem chama modal
     {
         jQuery.ajax
@@ -43,16 +39,6 @@
                 alert("Só aceita números!");
             }
         }
-    });
-
-	$("#btnLogin").click(function ()//se ocorrer tudo bem chama modal
-	{
-		console.log("aquibtn"); 
-		if (Session["Erro"] == 0)
-		{
-		console.log("entrou no if"); 
-			window.alert("Login ou senha inválido.");
-		}
     });
 	
     $("#AdicionarItem").click(function () {
@@ -160,8 +146,6 @@ function FecharStatus(Id_Venda)
     $("#Venda").val(Id_Venda);
     $("#myModal3").modal("show");
 
-//ajax vai para o click do salvar da forma do pg
-   
-
+	//ajax vai para o click do salvar da forma do pg
 }
 

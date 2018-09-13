@@ -13,9 +13,8 @@
         <th>Login</th>
         <th>Senha</th>
         <th>Editar</th>
-        <th>Excluir</th>
-
     </tr>
+
     @foreach (var funcionario in ViewBag.ListaFuncionario)
     {
         <tr>
@@ -25,7 +24,6 @@
             <td>@funcionario.Login</td>
             <td>@funcionario.Senha</td>
             <td ><a href="~/Funcionario/Cadastro/@funcionario.Id">Editar</a></td>
-            <td><a href="~/Funcionario/Excluir/@funcionario.Id">Excluir</a></td>
         </tr>
     }
 </table>
